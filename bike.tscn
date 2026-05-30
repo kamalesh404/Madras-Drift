@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://c4mrhsdxcv3te"]
+
+[ext_resource type="Script" uid="uid://cem2f23eulf7b" path="res://scripts/Bike.gd" id="1_ow0o1"]
+[ext_resource type="PackedScene" uid="uid://d2qfoy7v11tuv" path="res://assets/models/suzuki_gsx_750_bike.glb" id="2_sllpw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f5gm3"]
+size = Vector3(0.6, 1, 2.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ow0o1"]
+size = Vector3(3, 2, 3.5)
+
+[node name="Bike" type="VehicleBody3D" unique_id=284075137]
+mass = 220.0
+script = ExtResource("1_ow0o1")
+
+[node name="Model" type="Node3D" parent="." unique_id=135422150 instance=ExtResource("2_sllpw")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=924400613]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+shape = SubResource("BoxShape3D_f5gm3")
+
+[node name="InteractArea" type="Area3D" parent="." unique_id=1095915909]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea" unique_id=2000180431]
+shape = SubResource("BoxShape3D_ow0o1")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=379870833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -4)
+
+[node name="WheelFront" type="VehicleWheel3D" parent="." unique_id=132982853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 1)
+use_as_steering = true
+wheel_radius = 0.3
+wheel_friction_slip = 8.0
+suspension_travel = 0.15
+suspension_stiffness = 50.0
+
+[node name="WheelBack" type="VehicleWheel3D" parent="." unique_id=868275459]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.8)
+use_as_traction = true
+wheel_radius = 0.3
+wheel_friction_slip = 8.0
+suspension_travel = 0.15
+suspension_stiffness = 50.0

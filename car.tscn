@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://b8vxcxajk5f6c"]
+
+[ext_resource type="Script" uid="uid://pjiljjqnno22" path="res://scripts/Car.gd" id="1_uoj53"]
+[ext_resource type="PackedScene" uid="uid://bphavw7eugg87" path="res://assets/models/2022_toyota_team_toyotires_drift_gr86_66.glb" id="2_k61xc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_06lh1"]
+size = Vector3(1.8, 1.2, 4.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_td361"]
+size = Vector3(4, 2, 5)
+
+[node name="Car" type="VehicleBody3D" unique_id=370473461]
+mass = 1200.0
+script = ExtResource("1_uoj53")
+
+[node name="Model" type="Node3D" parent="." unique_id=84095811 instance=ExtResource("2_k61xc")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1676899643]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+shape = SubResource("BoxShape3D_06lh1")
+
+[node name="InteractArea" type="Area3D" parent="." unique_id=1257239436]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="@CollisionShape3D@22260" type="CollisionShape3D" parent="InteractArea" unique_id=925765363]
+shape = SubResource("BoxShape3D_td361")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=837545782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -5)
+
+[node name="WheelFrontLeft" type="VehicleWheel3D" parent="." unique_id=1607453085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.35, 1.4)
+use_as_steering = true
+wheel_radius = 0.35
+suspension_stiffness = 40.0
+
+[node name="WheelFrontRight" type="VehicleWheel3D" parent="." unique_id=1109681440]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.35, 1.4)
+use_as_steering = true
+wheel_radius = 0.35
+suspension_stiffness = 40.0
+
+[node name="WheelBackLeft" type="VehicleWheel3D" parent="." unique_id=1329737653]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.35, -1.4)
+use_as_traction = true
+wheel_radius = 0.35
+suspension_stiffness = 40.0
+
+[node name="WheelBackRight" type="VehicleWheel3D" parent="." unique_id=1602425850]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0.35, -1.4)
+use_as_traction = true
+wheel_radius = 0.35
+suspension_stiffness = 40.0

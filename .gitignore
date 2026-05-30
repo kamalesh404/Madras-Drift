@@ -1,0 +1,18 @@
+# Godot-specific ignores
+.godot/
+*.translation
+*.gdignore
+export_presets.cfg
+*.app
+*.apk
+*.aab
+*.exe
+*.pck
+*.ipa
+*.macos
+*.zip
+
+# Windows-specific ignores
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
