@@ -41,7 +41,7 @@ This project is in its early stages. Future updates may include:
 <br>
 <div align="center">
   <a href="https://github.com/kamalesh4044/Madras-Drift">
-    <img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fkamalesh4044%2FMadras-Drift&label=PROJECT%20VIEWS&labelColor=%230d1117&countColor=%2300ff88&style=for-the-badge" alt="Views"/>
+    <img src="https://komarev.com/ghpvc/?username=kamalesh4044-Madras-Drift&label=PROJECT+VIEWS&color=00ff88&style=for-the-badge" alt="Views"/>
   </a>
 </div>
 
