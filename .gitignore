@@ -2,7 +2,7 @@
 .godot/
 *.translation
 *.gdignore
-export_presets.cfg
+
 *.app
 *.apk
 *.aab
